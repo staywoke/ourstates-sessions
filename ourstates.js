@@ -4,12 +4,70 @@
  * Licensed under the terms of the MIT license.
  */
 (function () {
+  /**
+   * Get Current Year
+   * @type {Date}
+   */
+  var date = new Date();
+  var current_year = date.getFullYear();
 
   /**
    * Session End Dates by State
    * @type {object}
    */
-  var end_dates = { AL: '5/31/2017', AK: '4/16/2017', AZ: '4/22/2017', AR: '5/5/2017', CA: '9/15/2017', CO: '5/10/2017', CT: '6/7/2017', DE: '6/30/2017', FL: '5/5/2017', GA: '3/24/2017', HI: '5/4/2017', ID: '3/31/2017', IL: '5/31/2017', IN: '4/29/2017', IA: '4/18/2017', KS: '5/15/2017', KY: '3/30/2017', LA: '6/8/2017', ME: '6/14/2017', MD: '4/10/2017', MA: '11/15/2017', MI: '12/31/2017', MN: '5/22/2017', MS: '4/2/2017', MO: '5/12/2017', MT: '4/25/2017', NE: '6/2/2017', NV: '6/5/2017', NH: '6/30/2017', NJ: '1/9/2018', NM: '3/18/2017', NY: '12/31/2017', NC: '8/1/2017', ND: '4/26/2017', OH: '12/31/2017', OK: '5/26/2017', OR: '7/10/2017', PA: '12/31/2017', RI: '6/30/2017', SC: '6/1/2017', SD: '3/27/2017', TN: '4/14/2017', TX: '5/29/2017', UT: '3/9/2017', VT: '5/8/2017', VA: '2/25/2017', WA: '4/23/2017', MV: '4/8/2017', WI: '12/31/2017', WY: '3/3/2017' };
+  var end_dates = {
+    AL: '5/31/' + current_year,
+    AK: '4/16/' + current_year,
+    AZ: '4/22/' + current_year,
+    AR: '5/5/' + current_year,
+    CA: '9/15/' + current_year,
+    CO: '5/10/' + current_year,
+    CT: '6/7/' + current_year,
+    DE: '6/30/' + current_year,
+    FL: '5/5/' + current_year,
+    GA: '3/24/' + current_year,
+    HI: '5/4/' + current_year,
+    ID: '3/31/' + current_year,
+    IL: '5/31/' + current_year,
+    IN: '4/29/' + current_year,
+    IA: '4/18/' + current_year,
+    KS: '5/15/' + current_year,
+    KY: '3/30/' + current_year,
+    LA: '6/8/' + current_year,
+    ME: '6/14/' + current_year,
+    MD: '4/10/' + current_year,
+    MA: '11/15/' + current_year,
+    MI: '12/31/' + current_year,
+    MN: '5/22/' + current_year,
+    MS: '4/2/' + current_year,
+    MO: '5/12/' + current_year,
+    MT: '4/25/' + current_year,
+    NE: '6/2/' + current_year,
+    NV: '6/5/' + current_year,
+    NH: '6/30/' + current_year,
+    NJ: '1/9/' + (current_year + 1),
+    NM: '3/18/' + current_year,
+    NY: '12/31/' + current_year,
+    NC: '8/1/' + current_year,
+    ND: '4/26/' + current_year,
+    OH: '12/31/' + current_year,
+    OK: '5/26/' + current_year,
+    OR: '7/10/' + current_year,
+    PA: '12/31/' + current_year,
+    RI: '6/30/' + current_year,
+    SC: '6/1/' + current_year,
+    SD: '3/27/' + current_year,
+    TN: '4/14/' + current_year,
+    TX: '5/29/' + current_year,
+    UT: '3/9/' + current_year,
+    VT: '5/8/' + current_year,
+    VA: '2/25/' + current_year,
+    WA: '4/23/' + current_year,
+    MV: '4/8/' + current_year,
+    WI: '12/31/' + current_year,
+    WY: '3/3/' + current_year
+  };
+
 
   /**
    * Get Current Location if Browser Supports it
@@ -74,7 +132,7 @@
     var days = Math.floor((date_to_end.getTime() - today.getTime()) / ( 1000 * 60 * 60 * 24 ));
     var data_string = '';
 
-    var legislative_session = '<a class="other-states" href="https://ballotpedia.org/Dates_of_2017_state_legislative_sessions" target="_blank">legislative session</a>.';
+    var legislative_session = '<a class="other-states" href="https://ballotpedia.org/Dates_of_' + current_year + '_state_legislative_sessions" target="_blank">legislative session</a>.';
 
     if (days === 0) {
       data_string = 'Today is the last day in <span class="state-name">' + state + '\'s</span> ' + legislative_session;
